@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 
 namespace University_Entiry_Management
 {
-    class Profesor
+    class Profesor : BaseEntity
     {
-        private string Name { get; set; }
-        private string Spec { get; set; }
+        private string _name, _spec;
 
-        private Profesor(string name, string spec)
+        public Profesor(Storage storage , string name) : base(storage,name)
         {
-            this.Name = name;
-            BaseEntity Name = new BaseEntity(this.Name);
-            this.Spec = spec;
+        }
+
+        public Profesor SetSpeciality(string spec)
+        {
+            _spec = spec;
+            return this;
+        }
+        public override void save()
+        {
+            Console.WriteLine($"===== {_spec+","+_name} =====");
+            _storage.Save(_name + "," + _spec);
         }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace University_Entiry_Management
 {
-    class Storage
+    public interface Storage
     {
+        string Save(string text);
     }
 }

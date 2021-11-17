@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace University_Entiry_Management
 {
-   public class DB : Storage
+  abstract class BaseRepository
     {
-        public string Save(string text)
+        private Storage storage;
+        public BaseRepository(Storage storage)
         {
-            return "saved on db";
+            this.storage = storage;
         }
+
+        public void save2(BaseEntity entity);
     }
 }

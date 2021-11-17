@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace University_Entiry_Management
 {
-    class BaseEntity
+    public abstract class BaseEntity
     {
-        private string Name { get; set; }
+        protected Storage _storage;
+        private string Name;
 
-        public BaseEntity(string name)
+        protected BaseEntity(Storage storage, string name)
         {
-            this.Name = name;
+            _storage = storage;
+            Name = name;
         }
+        public abstract void save();
     }
 }
+

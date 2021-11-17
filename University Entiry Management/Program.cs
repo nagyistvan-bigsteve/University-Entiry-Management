@@ -6,7 +6,10 @@ namespace University_Entiry_Management
     {
         static void Main(string[] args)
         {
-            //        save("Peti", "IT");
+            var stud = new Profesor(new CSV(), "Peter")
+                .SetSpeciality("Informatika");
+
+            stud.save();
         }
 
     }
